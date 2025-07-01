@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Me</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Great+Vibes&display=swap");
+
+      body {
+        margin: 0;
+        background-color: #d6cdb7;
+        color: #1e1b18;
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        background-color: #b9aa82;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        padding: 1rem;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid #8b7f60;
+        font-family: "EB Garamond", serif;
+      }
+
+      nav a,
+      .dropdown {
+        color: #2c2c2c;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      nav a:hover,
+      .dropdown:hover > a {
+        color: #5c4b2e;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #e3d6b8;
+        min-width: 160px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        flex-direction: column;
+        border: 1px solid #b5a77a;
+      }
+
+      .dropdown-content a {
+        color: #1e1b18;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        display: block;
+        font-size: 1rem;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #d8caaa;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+
+      .container {
+        padding: 3rem;
+        max-width: 900px;
+        margin: auto;
+        background-color: #cbbf9a;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 3.5rem;
+        color: #3a2f1d;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+      }
+
+      td {
+        vertical-align: top;
+        padding: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.9;
+        color: #1e1b18;
+        border: none;
+        width: 50%;
+      }
+
+      .image-placeholder {
+        background-color: #a69365;
+        border: 4px solid #8b7f60;
+        border-radius: 12px;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #3a2f1d;
+        font-family: "EB Garamond", serif;
+        font-size: 1.5rem;
+        user-select: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-placeholder img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .image-slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .image-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .image-slide.active {
+        opacity: 1;
+        position: relative;
+      }
+
+      .image-label {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        padding: 0.25rem 0.5rem;
+        background-color: rgba(58, 47, 29, 0.7);
+        color: #f2ead3;
+        font-family: "EB Garamond", serif;
+        font-size: 1rem;
+        border-radius: 4px;
+        user-select: none;
+      }
+
+      @media (max-width: 768px) {
+        table,
+        tbody,
+        tr,
+        td {
+          display: block;
+          width: 100%;
+        }
+
+        td {
+          margin-bottom: 1.5rem;
+        }
+
+        .image-placeholder {
+          height: 200px;
+          margin-bottom: 0.5rem;
+          position: relative;
+        }
+
+        .image-placeholder img,
+        .image-slide img {
+          object-fit: contain;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/Mainpage.html">About</a>
+      <div class="dropdown">
+        <a href="#">Projects</a>
+        <div class="dropdown-content">
+          <a href="/FunCSS.html">Fun CSS</a>
+          <a href="/FunJavaScript.html">Fun JavaScript</a>
+          <a href="/Projects.html">Projects</a>
+        </div>
+      </div>
+      <a href="/Contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+      <h1>About Me</h1>
+
+      <table>
+        <tr>
+          <td>
+            Hi, I’m Cor — short for Hermias Cornelius Louw. I prefer Cor because
+            it's easy to remember and, well, it just feels like me. I’m a
+            freelance front-end web developer with a passion for crafting visual
+            experiences that stick.
+          </td>
+          <td>
+            <div class="image-placeholder">
+              <img src="/Me.png" alt="Me" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="image-placeholder" id="slider2">
+              <div class="image-slider">
+                <div class="image-slide active">
+                  <img src="/HTML 5.jpg" alt="HTML 5" />
+                </div>
+                <div class="image-slide">
+                  <img src="/CSS 3.jpg" alt="CSS 3" />
+                </div>
+                <div class="image-slide">
+                  <img src="/JavaScript.avif" alt="JavaScript" />
+                </div>
+              </div>
+              <div class="image-label" id="label2">Image 2a</div>
+            </div>
+          </td>
+          <td>
+            While I currently work in web development, my long-term ambition
+            reaches beyond the browser. I'm actively shifting toward game and
+            cinematic design, particularly in character modeling and environment
+            creation for cutscenes, cinematics, and CGI-based media. Whether
+            it's a game, a short film, or a series like
+            <em>Love, Death & Robots</em>, I'm driven by the chance to shape the
+            visuals that captivate an audience.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            What fuels me is the endless variety of styles, moods, and
+            aesthetics people find compelling. I’m drawn to the challenge of
+            merging these styles to create something uniquely alluring —
+            something that not only looks good, but feels right. It’s more than
+            design to me — it’s art.
+          </td>
+          <td>
+            <div class="image-placeholder" id="slider3">
+              <div class="image-slider">
+                <div class="image-slide active">
+                  <img src="/SQL.png" alt="SQL" />
+                </div>
+                <div class="image-slide">
+                  <img src="/Unreal Engine.avif" alt="UnrealEngine" />
+                </div>
+                <div class="image-slide">
+                  <img src="/Twinmotion.jpg" alt="Twinmotion" />
+                </div>
+              </div>
+              <div class="image-label" id="label3">Image 3a</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="image-placeholder" id="slider4">
+              <div class="image-slider">
+                <div class="image-slide active">
+                  <img src="/Bike 1.jpeg" alt="Bike 1" />
+                </div>
+                <div class="image-slide">
+                  <img src="/Bike 2.jpeg" alt="Bike 2" />
+                </div>
+                <div class="image-slide">
+                  <img src="/Bike 3.jpeg" alt="Bike 3" />
+                </div>
+              </div>
+              <div class="image-label" id="label4">Image 4a</div>
+            </div>
+          </td>
+          <td>
+            My strengths lie in learning quickly, adapting fast, and seeing
+            visual details others might miss. I’m proficient with HTML5, CSS3,
+            JavaScript, and SQL, and I’m currently diving deep into Unreal
+            Engine and Twinmotion. I also love video editing and frequently use
+            Wondershare Filmora to bring creative ideas to life on screen.
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      function createSlider(sliderId, labelId) {
+        const slider = document.getElementById(sliderId);
+        const slides = slider.querySelectorAll(".image-slide");
+        const label = document.getElementById(labelId);
+        let current = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+          });
+          label.textContent = slides[index].textContent;
+        }
+
+        function nextSlide() {
+          current = (current + 1) % slides.length;
+          showSlide(current);
+        }
+
+        setInterval(nextSlide, 3000);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        createSlider("slider2", "label2");
+        createSlider("slider3", "label3");
+        createSlider("slider4", "label4");
+      });
+    </script>
+  </body>
+</html>

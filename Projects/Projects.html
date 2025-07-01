@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: url("https://www.transparenttextures.com/patterns/old-moon.png");
+        background-color: #fdf6e3;
+        font-family: "Georgia", serif;
+        padding: 0;
+        color: #3b2f2f;
+      }
+
+      nav {
+        background-color: rgba(255, 248, 220, 0.85);
+        border-bottom: 2px solid #bda27a;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      nav a,
+      .dropdown button {
+        text-decoration: none;
+        color: #5e3b27;
+        font-weight: bold;
+        background: none;
+        border: none;
+        font-family: inherit;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      nav a:hover,
+      .dropdown button:hover {
+        color: #8b5e3c;
+        text-decoration: underline;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff8dc;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 0.5rem;
+        z-index: 1001;
+        border: 1px solid #bda27a;
+      }
+
+      .dropdown-content a {
+        display: block;
+        text-align: left;
+        padding: 0.3rem 0;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 3rem auto;
+        background-color: rgba(255, 255, 240, 0.9);
+        border: 2px solid #bda27a;
+        padding: 2rem;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px #e0c097;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+        list-style: none;
+      }
+
+      /* Main project bullet - quill/ink-feel */
+      .project-item::before {
+        content: "🪶";
+        margin-right: 0.5rem;
+        color: #5e3b27;
+        font-size: 1.2rem;
+        vertical-align: middle;
+      }
+
+      /* Sub-link bullet - arrow */
+      .sublink li::before {
+        content: "➤";
+        margin-right: 0.5rem;
+        color: #8b5e3c;
+        font-size: 1rem;
+        vertical-align: middle;
+      }
+
+      li {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+
+      .sublink {
+        margin-left: 2.5rem;
+        list-style: none;
+        font-style: italic;
+      }
+
+      .sublink a {
+        text-decoration: none;
+        color: #5e3b27;
+      }
+
+      .sublink a:hover {
+        text-decoration: underline;
+        color: #8b5e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/Main Page/Mainpage.html">About</a>
+
+      <div class="dropdown">
+        <button>Projects</button>
+        <div class="dropdown-content">
+          <a href="/Fun CSS/FunCSS.html">Fun CSS</a>
+          <a href="/Fun JavaScript/FunJavaScript.html">Fun JavaScript</a>
+          <a href="/Projects/Projects.html">Projects</a>
+        </div>
+      </div>
+
+      <a href="/Contact/Contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+      <h1>Projects</h1>
+      <ul>
+        <li class="project-item">
+          Lucro
+          <ul class="sublink">
+            <li><a href="https://morelucro.com">View project</a></li>
+          </ul>
+        </li>
+        <li class="project-item">
+          IT-IQ
+          <ul class="sublink">
+            <li><a href="https://itiq.tech">View project</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

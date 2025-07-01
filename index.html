@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Landing Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Orbitron", sans-serif;
+        background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
+        color: #e0e0e0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        text-align: center;
+        padding: 4rem 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: #c084fc;
+        text-shadow: 0 0 10px #c084fc;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        color: #a0ff9f;
+        text-shadow: 0 0 5px #00ff88;
+        max-width: 600px;
+      }
+
+      .photo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .photo-container img:first-child {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 20px #c084fc;
+      }
+
+      .arrow-above {
+        width: 120px;
+        height: auto;
+        animation: bounce 1.5s infinite;
+        margin-bottom: 1.5rem;
+      }
+
+      .me-button {
+        font-size: 2.2rem;
+        padding: 1.2rem 2.5rem;
+        background-color: #000;
+        color: #c084fc;
+        border: 2px solid #c084fc;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 12px #c084fc;
+        position: relative;
+        z-index: 1;
+      }
+
+      .me-button:hover {
+        box-shadow: 0 0 25px #00ff88, 0 0 50px #00ff88;
+        background-color: #111;
+        color: #00ff88;
+        border-color: #00ff88;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(192, 132, 252, 0.1);
+        box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .shape:nth-child(1) {
+        width: 150px;
+        height: 150px;
+        top: 10%;
+        left: 5%;
+      }
+
+      .shape:nth-child(2) {
+        width: 80px;
+        height: 80px;
+        top: 70%;
+        left: 80%;
+      }
+
+      .shape:nth-child(3) {
+        width: 120px;
+        height: 120px;
+        top: 50%;
+        left: 50%;
+      }
+
+      .shape:nth-child(4) {
+        width: 90px;
+        height: 90px;
+        top: 30%;
+        left: 75%;
+      }
+
+      .shape:nth-child(5) {
+        width: 100px;
+        height: 100px;
+        top: 80%;
+        left: 20%;
+      }
+
+      .shape:nth-child(6) {
+        width: 70px;
+        height: 70px;
+        top: 60%;
+        left: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+
+    <h1>Hi, my name is Cor!</h1>
+    <p>
+      I am a front-end web developer specialising in HTML, CSS, and JavaScript.
+    </p>
+
+    <div class="photo-container">
+      <img src="/Landing Images/Me.png" alt="Photo of Cor" />
+    </div>
+
+    <img
+      class="arrow-above"
+      src="/Landing Images/Arrow.jpg"
+      alt="Arrow pointing to ME button"
+    />
+    <button
+      class="me-button"
+      onclick="location.href='/Main page/Mainpage.html'"
+    >
+      ME
+    </button>
+  </body>
+</html>
